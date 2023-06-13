@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 6</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <table>
+
+        <tr>
+            <th>húzás éve:</th>
+            <th>adat összege::</th>
+        </tr>
+        {% for adat in  adatok%}
+        <tr>
+            <td>{{adat.ev}}</td>
+            <td>{{adat.osszeg}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

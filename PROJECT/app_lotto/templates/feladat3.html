@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat 3</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <table>
+
+        <tr>
+            <th>hét:</th>
+            <th>találat szám:</th>
+            <th>szelvény szám:</th>
+            <th>összeg:</th>
+        </tr>
+        {% regroup adatok by huzasid__het as csoportok %}
+        {% for csoport in csoportok%}
+        <tr>
+            <td>{{csoport.grouper}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% for adat in  csoport.list%}
+        <tr>
+            <td></td>
+            <td>{{adat.talalat}}</td>
+            <td>{{adat.szelvenyszam}}</td>
+            <td>{{adat.osszeg}}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+
+    </table>
+</body>
+</html>
