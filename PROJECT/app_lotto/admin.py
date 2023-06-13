@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Huzas, Huzott, Nyeremeny
+
+admin.site.register(Huzas)
+admin.site.register(Huzott)
+admin.site.register(Nyeremeny)
